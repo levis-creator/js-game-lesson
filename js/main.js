@@ -34,10 +34,15 @@ function renderGame() {
   sum_el.textContent = "Sum: " + sum;
 }
 function newCard() {
-  let card = getRandomCard();
-  sum += card;
-  cards.push(card);
-  renderGame();
+  /*    // Only allow the player to get a new card 
+if she IS alive and does NOT have Blackjack
+ */
+  if (isAlive === true && hasBlackJack === false) {
+    let card = getRandomCard();
+    sum += card;
+    cards.push(card);
+    renderGame();
+  }
 }
 
 function getRandomCard() {
@@ -50,3 +55,28 @@ function getRandomCard() {
     return randomNumber;
   }
 }
+
+let course = {
+  title: "React course",
+  lessons: 16,
+  creator: "Levis Nyingi",
+  length: 63,
+  level: 2,
+  isFree: true,
+  tags: ["html", "css"],
+};
+
+console.log(course.length);
+
+/* // Create an object that represents an airbnb castle listing.
+// It should contain at least one boolean, one string, 
+one number, and one array
+// Log out at least two of the keys using the dot notation
+ */
+let car = {
+  name: "Toyota Doble cabin",
+  model: "hilux",
+  production: 2005,
+  fuelEfficient: false,
+  power: "2000hp",
+};
